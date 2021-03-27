@@ -1,24 +1,24 @@
 //Function UpdateText
-function updateText() {
+updateText = () => {
     let text = document.getElementById("text-input").value;
     document.getElementById("text-output").innerText = text;
 
 }
 
 //MakeBold Function
-function makeBold(elem) {
+makeBold = (elem) => {
     elem.classList.toggle('active');
     document.getElementById('text-output').classList.toggle('bold');
 }
 
 //MakeItalic Function
-function makeItalic(elem) {
+makeItalic = (elem) => {
     elem.classList.toggle('active');
     document.getElementById('text-output').classList.toggle('italic');
 }
 
 //Make UnderLine Function
-function makeUnderline(elem) {
+makeUnderline = (elem) => {
     elem.classList.toggle('active');
     let formattedText = document.getElementById('text-output');
     if (formattedText.classList.contains('underline')) {
@@ -31,12 +31,14 @@ function makeUnderline(elem) {
 }
 
 //Alignment Function
-function alignText(elem, alignType) {
-    // CODE GOES HERE
+alignText = (elem, alignType) => {
     document.getElementById('text-output').style.textAlign = alignType;
     let buttonsList = document.getElementsByClassName('align');
-    for (let i = 0; i < buttonsList.length; i++) {
-        buttonsList[i].classList.remove('active');
+    // for (let i = 0; i < buttonsList.length; i++) {
+    //     buttonsList[i].classList.remove('active');
+    // }
+    for (let button of buttonsList) {
+        button.classList.remove('active');
     }
     elem.classList.toggle('active');
 
